@@ -15,4 +15,4 @@ This repository hosts my GitHub Page (see **index.html** or **index.md**) showca
 - **Contact:** [ybaglinbunod@gmail.com](mailto:ybaglinbunod@gmail.com)  
 - **LinkedIn:** [linkedin.com/in/yann-baglin-bunod](https://linkedin.com/in/yann-baglin-bunod)
 
-Thanks for visiting!
+Test
