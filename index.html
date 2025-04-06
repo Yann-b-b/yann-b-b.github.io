@@ -2,73 +2,170 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Yann Machine Learning</title>
+  <title>Yann Baglin-Bunod Machine Learning Portfolio</title>
   <style>
     body {
-      margin: 0; 
+      margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: #fafafa;
+      background: url('media/background.jpg') no-repeat center center fixed;
+      background-size: cover;
     }
+
+    /* Soft overlay to improve text contrast */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      z-index: -1;
+    }
+
     header {
-      background: #333; 
-      color: #fff; 
+      background: #333;
+      color: #fff;
       padding: 1em;
+      text-align: center;
     }
+
     header h1 {
       margin: 0;
+      font-size: 1.8em;
+      font-weight: normal;
     }
+
     main {
-      max-width: 900px; 
-      margin: 2em auto; 
+      max-width: 1400px;
+      margin: 2em auto;
       padding: 0 1em;
     }
-    .projects {
-      display: grid; 
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+    .intro {
+      display: flex;
+      align-items: center;
       gap: 2em;
+      margin-bottom: 2em;
     }
-    .project-card {
-      background: #fff; 
-      padding: 1em; 
-      border-radius: 8px; 
+
+    .intro img {
+      width: 150px;
+      height: 150px;
+      border-radius: 8px;
+      object-fit: cover;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+    }
+
+    .project-card {
+      background: #fff;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
+    }
+
     .project-card img {
-      width: 100%; 
-      height: auto; 
+      width: 100%;
+      height: auto;
       border-radius: 4px;
       margin-bottom: 1em;
     }
+
     .project-card h2 {
-      margin-top: 0; 
+      margin: 0 0 0.5em 0;
       font-size: 1.2em;
     }
+
     .project-card a {
-      text-decoration: none; 
-      color: #007bff; 
+      text-decoration: none;
+      color: #007bff;
       font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #333;
+      color: #fff;
+      margin-top: 3em;
     }
   </style>
 </head>
 <body>
 
+<div class="overlay"></div>
+
 <header>
-  <h1>Yann's Machine Learning Portfolio</h1>
+  <h1>Yann Baglin-Bunod Machine Learning Portfolio</h1>
 </header>
 
 <main>
+  <!-- About / Intro Section -->
   <section class="intro">
-    <p>Hello, I’m Yann. I study ECE with a focus on ML/AI. Below are some highlights of my projects and research. Check out the repos for more details!</p>
+    <img src="media/profile_pic.jpg" alt="Yann's Profile">
+    <p>
+      Hello, I'm Yann. I'm an Electrical and Computer Engineering student focusing on Machine Learning and AI. 
+      Below are some of my key projects and research highlights.
+    </p>
   </section>
 
   <section class="projects">
-
-    <!-- Project 1 -->
+    <!-- Winter 2025 -->
     <div class="project-card">
-      <!-- Make sure the file name matches exactly -->
+      <img src="media/smart_pillow_placeholder.jpg" alt="Smart Pillow Prototype">
+      <h2>Smart Pillow – Anti-Snoring Product Pitch <span style="font-weight: normal; font-size: 0.9em;">(Winter 2025)</span></h2>
+      <p>
+        A business-focused engineering project involving the design and pitch of a smart anti-snoring pillow.
+        Includes prototype development and market research.
+      </p>
+      <a href="#" target="_blank">Link coming soon</a>
+    </div>
+
+    <div class="project-card">
+      <img src="media/multimodal_project_placeholder.jpg" alt="Multimodal Contrastive Learning">
+      <h2>Multimodal Embedding Alignment <span style="font-weight: normal; font-size: 0.9em;">(Winter 2025)</span></h2>
+      <p>
+        A research-based project developing a framework to bridge modalities using contrastive learning.
+        Focused on aligning audio, image, and text embeddings using deep learning and projection heads.
+      </p>
+      <a href="#" target="_blank">Link coming soon</a>
+    </div>
+
+    <div class="project-card">
+      <img src="media/nlp_distillation_placeholder.jpg" alt="LLM to SLM Distillation">
+      <h2>NLP: LLM → SLM Distillation for Spanish Summarization <span style="font-weight: normal; font-size: 0.9em;">(Winter 2025)</span></h2>
+      <p>
+        Distilled large language model knowledge into a lightweight model for Spanish text summarization.
+        Evaluated downstream performance and interpretability across tasks.
+      </p>
+      <a href="#" target="_blank">Link coming soon</a>
+    </div>
+
+    <!-- Fall 2024 -->
+    <div class="project-card">
+      <img src="media/tweet_classification_placeholder.jpg" alt="Tweet Classification">
+      <h2>ML for Tweet Classification <span style="font-weight: normal; font-size: 0.9em;">(Fall 2024)</span></h2>
+      <p>
+        Supervised learning project to classify whether a tweet was sent during a crucial moment in a soccer match.
+        Explored feature extraction, model selection, and evaluation metrics.
+      </p>
+      <a href="#" target="_blank">Link coming soon</a>
+    </div>
+
+    <!-- Winter 2024 -->
+    <div class="project-card">
       <img src="media/asl_recognition.jpeg" alt="ASL Recognition">
-      <h2>ASL Recognition CNN</h2>
+      <h2>ASL Recognition CNN <span style="font-weight: normal; font-size: 0.9em;">(Winter 2024)</span></h2>
       <p>A ResNet-based approach for classifying American Sign Language letters using skeletonized hand images.</p>
       <a 
         href="https://www.canva.com/design/DAGAP0Ar8s4/2G_4odnGYPq0sK2ClLsB6w/view?utm_content=DAGAP0Ar8s4&utm_campaign=designshare&utm_medium=link&utm_source=recording_view" 
@@ -85,17 +182,22 @@
       </a>
     </div>
 
-    <!-- Project 2 -->
+    <!-- Spring 2023 -->
     <div class="project-card">
       <img src="media/get_a_grip.png" alt="Gripper Arm Model">
       <img src="media/get_a_grip2.jpeg" alt="Gripper Arm Physical">
-      <h2>Gripper Arm – Assistive Device</h2>
-      <p>Forearm-mounted device assisting limited hand mobility. PCB design, CAD, and embedded C code.</p>
-      <a href="https://qdo665.wixsite.com/ece196getagrip" target="_blank">Project Site</a>
+      <h2>Gripper Arm – Assistive Device <span style="font-weight: normal; font-size: 0.9em;">(Spring 2023)</span></h2>
+      <p>Forearm-mounted device assisting those with limited hand mobility. PCB design, CAD, and embedded C code.</p>
+      <a href="https://qdo665.wixsite.com/ece196getagrip" target="_blank">
+        Project Site
+      </a>
     </div>
-
   </section>
 </main>
+
+<footer>
+  <p>&copy; 2025 Yann Baglin-Bunod</p>
+</footer>
 
 </body>
 </html>
