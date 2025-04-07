@@ -2,24 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Yann Baglin-Bunod Machine Learning Portfolio</title>
+  <title>Yann Baglin-Bunod Project Portfolio</title>
   <style>
+    html {
+      height: 100%;
+      background-image: url('media/floating-cogs.svg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background: url('media/background.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-color: rgba(255, 255, 255, 0.75);
+      position: relative;
+      z-index: 1;
     }
 
-    /* Soft overlay to improve text contrast */
-    .overlay {
+    html::before {
+      content: '';
       position: fixed;
       top: 0;
       left: 0;
       height: 100%;
       width: 100%;
-      background: rgba(255, 255, 255, 0.75);
+      background-color: rgba(100, 149, 237, 0.2); /* light blue overlay */
       z-index: -1;
     }
 
@@ -47,6 +57,12 @@
       align-items: center;
       gap: 2em;
       margin-bottom: 2em;
+      background: #fff;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      max-width: 800px;
+      box-sizing: border-box;
     }
 
     .intro img {
@@ -103,10 +119,8 @@
 </head>
 <body>
 
-<div class="overlay"></div>
-
 <header>
-  <h1>Yann Baglin-Bunod Machine Learning Portfolio</h1>
+  <h1>Yann Baglin-Bunod Project Portfolio</h1>
 </header>
 
 <main>
@@ -151,6 +165,16 @@
       <a href="#" target="_blank">Link coming soon</a>
     </div>
 
+    <div class="project-card">
+      <img src="media/chess-bot.png" alt="Chess Board Example">
+      <h2>Reinforcement Learning: Chess Bot RL Environment <span style="font-weight: normal; font-size: 0.9em;">(Winter 2025)</span></h2>
+      <p>
+        Created a modular and easy to modify backend/frontend design for testing different algorithms at chess.
+        Made available different evaluation metrics for ai vs ai including an elo system.
+      </p>
+      <a href="#" target="_blank">Link coming soon</a>
+    </div>
+
     <!-- Fall 2024 -->
     <div class="project-card">
       <img src="media/tweet_classification_placeholder.jpg" alt="Tweet Classification">
@@ -161,7 +185,7 @@
       </p>
       <a href="#" target="_blank">Link coming soon</a>
     </div>
-
+    
     <!-- Winter 2024 -->
     <div class="project-card">
       <img src="media/asl_recognition.jpeg" alt="ASL Recognition">
