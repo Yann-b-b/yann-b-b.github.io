@@ -40,10 +40,29 @@
       text-align: center;
     }
 
-    header h1 {
+    .header-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+      flex-wrap: wrap;
+    }
+
+    .header-container h1 {
       margin: 0;
       font-size: 1.8em;
       font-weight: normal;
+    }
+
+    .header-container img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) invert(1); /* makes icons white */
+      transition: transform 0.2s ease;
+    }
+
+    .header-container img:hover {
+      transform: scale(1.1);
     }
 
     main {
@@ -120,7 +139,15 @@
 <body>
 
 <header>
-  <h1>Yann Baglin-Bunod Project Portfolio</h1>
+  <div class="header-container">
+    <h1>Yann Baglin-Bunod Project Portfolio</h1>
+    <a href="mailto:ybaglinbunod@gmail.com" target="_blank">
+      <img src="media/gmail_icon.webp" alt="Email">
+    </a>
+    <a href="https://www.linkedin.com/in/yann-baglin-bunod" target="_blank">
+      <img src="media/linkedin_icon.png" alt="LinkedIn">
+    </a>
+  </div>
 </header>
 
 <main>
