@@ -37,7 +37,10 @@
       background: #333;
       color: #fff;
       padding: 1em;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
     .header-container {
@@ -63,6 +66,20 @@
 
     .header-container img:hover {
       transform: scale(1.1);
+    }
+
+    .cv-link {
+      font-size: 0.95em;
+      background-color: #007bff;
+      color: white;
+      padding: 0.4em 0.8em;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+
+    .cv-link:hover {
+      background-color: #0056b3;
     }
 
     main {
@@ -107,6 +124,12 @@
       width: 100%;
       max-width: 300px;
       box-sizing: border-box;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
 
     .project-card img {
@@ -148,6 +171,7 @@
       <img src="media/linkedin_icon.png" alt="LinkedIn">
     </a>
   </div>
+  <a class="cv-link" href="https://github.com/YOUR_USERNAME/YOUR_REPO/raw/main/Yann_Baglin-Bunod_CV.pdf" target="_blank">View CV</a>
 </header>
 
 <main>
@@ -160,6 +184,7 @@
     </p>
   </section>
 
+  
   <section class="projects">
     <!-- Winter 2025 -->
     <div class="project-card">
