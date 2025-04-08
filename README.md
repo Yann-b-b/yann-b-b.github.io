@@ -14,5 +14,3 @@ This repository hosts my GitHub Page (see **index.html** or **index.md**) showca
 - **Focus:** Machine Learning, Computer Vision, Reinforcement Learning  
 - **Contact:** [ybaglinbunod@gmail.com](mailto:ybaglinbunod@gmail.com)  
 - **LinkedIn:** [linkedin.com/in/yann-baglin-bunod](https://linkedin.com/in/yann-baglin-bunod)
-
-Test
