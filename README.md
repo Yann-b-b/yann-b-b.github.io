@@ -1,16 +1,11 @@
-# Yann's Portfolio
+# Yann Baglin-Bunod – Portfolio Website
 
-This repository hosts my GitHub Page (see **index.html** or **index.md**) showcasing my ML and embedded projects.
-
-- **[ASL Recognition CNN](https://github.com/sebastian110203/ECE176Final)**  
-  A ResNet-based deep learning model for American Sign Language recognition.
-
-- **[Gripper Arm – Assistive Device](https://qdo665.wixsite.com/ece196getagrip)**  
-  A wearable arm device to help individuals with limited hand mobility.
+This repository hosts my personal portfolio website, built using HTML and CSS, and deployed via GitHub Pages at [yann-b-b.github.io](https://yann-b-b.github.io).
 
 ## About Me
 
-- **University:** UC San Diego (B.S. in Electrical & Computer Engineering)  
-- **Focus:** Machine Learning, Computer Vision, Reinforcement Learning  
-- **Contact:** [ybaglinbunod@gmail.com](mailto:ybaglinbunod@gmail.com)  
-- **LinkedIn:** [linkedin.com/in/yann-baglin-bunod](https://linkedin.com/in/yann-baglin-bunod)
+I'm an Electrical and Computer Engineering student at UC San Diego, currently focusing on machine learning, computer vision, and reinforcement learning. My portfolio showcases a variety of technical projects ranging from AI research to embedded systems and product prototyping.
+
+## Purpose
+
+This website serves as a hub to share my work, link to GitHub repositories, and provide access to research papers, presentations, and prototypes.
