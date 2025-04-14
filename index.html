@@ -99,6 +99,12 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       max-width: 1500px;
       box-sizing: border-box;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .intro:hover {
+      transform: translateY(-5px);
+      animation: rainbowShadow 1.5s infinite linear;
     }
 
     .intro img {
@@ -107,6 +113,10 @@
       border-radius: 8px;
       object-fit: cover;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .intro p {
+      font-size: 1.2em;
     }
 
     .projects {
@@ -129,7 +139,7 @@
 
     .project-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 12px rgba(139, 0, 0, 0.6); /* dark red */
     }
 
     .project-card img {
@@ -157,6 +167,21 @@
       color: #fff;
       margin-top: 3em;
     }
+  @keyframes rainbowShadow {
+    0% { box-shadow: 0 6px 12px rgba(255, 0, 0, 0.3); }
+    16% { box-shadow: 0 6px 12px rgba(255, 165, 0, 0.3); }
+    32% { box-shadow: 0 6px 12px rgba(255, 255, 0, 0.3); }
+    48% { box-shadow: 0 6px 12px rgba(0, 128, 0, 0.3); }
+    64% { box-shadow: 0 6px 12px rgba(0, 0, 255, 0.3); }
+    80% { box-shadow: 0 6px 12px rgba(75, 0, 130, 0.3); }
+    100% { box-shadow: 0 6px 12px rgba(238, 130, 238, 0.3); }
+  }
+
+  @keyframes hueShiftShadow {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(180deg); }
+    100% { filter: hue-rotate(360deg); }
+  }
   </style>
 </head>
 <body>
