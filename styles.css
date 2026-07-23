@@ -71,7 +71,7 @@ img { max-width: 100%; }
 .about-edu { color: var(--muted); font-size: 0.95rem; }
 
 .marquee {
-  margin-top: 2rem; overflow: hidden;
+  margin: 2rem auto 0; max-width: var(--maxw); overflow: hidden;
   border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
   padding: 0.9rem 0;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
