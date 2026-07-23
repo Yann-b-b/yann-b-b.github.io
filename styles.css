@@ -148,4 +148,6 @@ img { max-width: 100%; }
   .research-item { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .hero { padding: 3rem 0 2rem; }
+  .timeline { height: 184px; }
+  .tl-item { padding: 0.5rem 0 0.5rem 1.4rem; }
 }
