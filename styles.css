@@ -13,6 +13,8 @@
 
 html { scroll-behavior: smooth; }
 
+#about, #research, #projects { scroll-margin-top: 72px; }
+
 body {
   margin: 0;
   background: var(--paper);
