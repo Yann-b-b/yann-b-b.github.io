@@ -65,8 +65,8 @@ img { max-width: 100%; }
 .hero-social { display: flex; gap: 1.2rem; font-size: 0.95rem; }
 
 .about { padding: 3.5rem 0 2rem; }
-.about-grid { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; align-items: start; }
-.about-photo { width: 160px; height: 160px; border-radius: 10px; object-fit: cover; }
+.about-grid { display: grid; grid-template-columns: 320px 1fr; gap: 2rem; align-items: start; }
+.about-photo { width: 320px; height: 320px; border-radius: 10px; object-fit: cover; }
 .about-text p { margin: 0.4rem 0 0.9rem; }
 .about-edu { color: var(--muted); font-size: 0.95rem; }
 
@@ -122,7 +122,7 @@ img { max-width: 100%; }
   .nav-links { gap: 0.9rem; font-size: 0.85rem; }
   .nav-links a:not(.nav-cv) { display: none; }         /* keep only CV button on small screens */
   .about-grid { grid-template-columns: 1fr; }
-  .about-photo { width: 120px; height: 120px; }
+  .about-photo { width: 240px; height: 240px; }
   .research-item { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .hero { padding: 3rem 0 2rem; }
