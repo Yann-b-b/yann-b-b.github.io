@@ -84,30 +84,12 @@
     </div>
   </section>
 
-  <section class="projects">
-    <!-- Spring 2026 -->
-    <div class="project-card">
-      <img src="media/gp_fusion.png" alt="Multimodal Gaussian Process Fusion">
-      <h2>Multimodal <strong>Gaussian Process Fusion</strong> <span style="font-weight: normal; font-size: 0.9em;">(Spring 2026)</span></h2>
-      <ul>
-        <li>Ran a <strong>9,703-configuration ablation</strong> of multimodal GP fusion (9 embedders × 3 GP scaling methods × 5 ensemble modes); a data-pipeline fix raised best test R² from 0.629 to <strong>0.662</strong>.</li>
-        <li>Built a <strong>spectrally-normalized MLP</strong> over Gemini text embeddings to extract a 128-d GP input, reaching test <strong>R² 0.6685 / NLPD 0.57</strong>.</li>
-      </ul>
-      <p style="font-size: 0.85em; color: #555;"><em>Research with K. Polyzos, Schmidt AI in Science (UCSD); manuscript in preparation</em></p>
-    </div>
-
-    <div class="project-card">
-      <img src="media/rag_context.png" alt="Hybrid RAG results table">
-      <h2>Hybrid <strong>RAG over Technical Docs</strong> <span style="font-weight: normal; font-size: 0.9em;">(Spring 2026)</span></h2>
-      <ul>
-        <li>Engineered a <strong>hybrid RAG pipeline</strong> — hierarchical chunking, bge-m3 dense + BM25 sparse fused by <strong>reciprocal-rank fusion</strong>, then a cross-encoder reranker — reaching <strong>F1@5 0.853 / Precision@5 0.889</strong>.</li>
-        <li>Designed a <strong>HyDE</strong> query stage with parent-chunk expansion and a 1,700-token context packer.</li>
-      </ul>
-      <p style="font-size: 0.85em; color: #555;"><em>Team project (2 people)</em></p>
-      <a href="assets/RAG_Context_Engineering_Report.pdf" target="_blank">View Paper</a>
-    </div>
-
-    <!-- Spring 2025 -->
+  <section id="projects" class="projects-section">
+    <div class="wrap">
+      <p class="eyebrow">Coursework &amp; Side Projects</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <!-- Spring 2025 -->
     <div class="project-card">
       <video autoplay loop muted playsinline style="width: 100%; margin-top: 1em; border-radius: 8px;" onloadedmetadata="this.playbackRate=2.0;">
         <source src="media/flashcard_maker.mov" type="video/mp4">
@@ -249,6 +231,8 @@
       <a href="https://qdo665.wixsite.com/ece196getagrip" target="_blank">
         Project Site
       </a>
+    </div>
+      </div>
     </div>
   </section>
 </main>
