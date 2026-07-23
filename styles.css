@@ -13,7 +13,7 @@
 
 html { scroll-behavior: smooth; }
 
-#about, #research, #projects { scroll-margin-top: 72px; }
+#about, #experience, #research, #projects { scroll-margin-top: 72px; }
 
 body {
   margin: 0;
@@ -113,6 +113,28 @@ img { max-width: 100%; }
 .project-card ul { margin: 0 0 0.6rem; padding-left: 1.1rem; font-size: 0.92rem; }
 .project-card a { font-weight: 500; }
 .project-card a:hover { text-decoration: underline; text-decoration-color: var(--rust); }
+
+.experience { padding: 3rem 0; border-top: 1px solid var(--hairline); }
+.timeline {
+  position: relative; height: 216px; overflow: hidden; margin-top: 0.4rem;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 15%, #000 85%, transparent);
+          mask-image: linear-gradient(180deg, transparent, #000 15%, #000 85%, transparent);
+}
+.timeline-track { display: flex; flex-direction: column; animation: timeline 24s linear infinite; }
+.timeline:hover .timeline-track, .timeline:focus-within .timeline-track { animation-play-state: paused; }
+@keyframes timeline { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+.tl-item { position: relative; padding: 0.6rem 0 0.6rem 1.6rem; margin-left: 0.4rem; border-left: 2px solid var(--hairline); }
+.tl-item::before { content: ""; position: absolute; left: -7px; top: 0.95rem; width: 12px; height: 12px; border-radius: 50%; background: var(--rust); border: 2px solid var(--paper); }
+.tl-year { font-family: var(--font-serif); font-weight: 600; color: var(--rust); font-size: 1.05rem; }
+.tl-body { display: flex; flex-direction: column; margin-top: 0.1rem; }
+.tl-role { font-size: 0.95rem; color: var(--ink); }
+.tl-org { font-size: 0.85rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline { height: auto; -webkit-mask-image: none; mask-image: none; }
+  .timeline-track { animation: none; }
+  .tl-item:nth-child(n+5) { display: none; }
+}
 
 .footer { border-top: 1px solid var(--hairline); padding: 2rem 0; margin-top: 2rem; color: var(--muted); font-size: 0.9rem; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
