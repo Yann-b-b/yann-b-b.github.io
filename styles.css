@@ -61,3 +61,29 @@ img { max-width: 100%; }
 .hero-title { font-size: clamp(2.4rem, 6vw, 4rem); margin: 0.3rem 0 0.6rem; }
 .hero-tagline { font-size: 1.2rem; color: var(--muted); margin: 0 0 1.4rem; max-width: 40ch; }
 .hero-social { display: flex; gap: 1.2rem; font-size: 0.95rem; }
+
+.about { padding: 3.5rem 0 2rem; }
+.about-grid { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; align-items: start; }
+.about-photo { width: 160px; height: 160px; border-radius: 10px; object-fit: cover; }
+.about-text p { margin: 0.4rem 0 0.9rem; }
+.about-edu { color: var(--muted); font-size: 0.95rem; }
+
+.marquee {
+  margin-top: 2rem; overflow: hidden;
+  border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+  padding: 0.9rem 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track { display: inline-flex; gap: 0.9rem; white-space: nowrap; animation: marquee 28s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track span {
+  font-family: var(--font-sans); font-size: 0.9rem; color: var(--ink);
+  background: #fff; border: 1px solid var(--hairline); border-radius: 999px; padding: 0.35rem 0.9rem;
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { -webkit-mask-image: none; mask-image: none; }
+  .marquee-track { animation: none; flex-wrap: wrap; white-space: normal; }
+}
