@@ -88,3 +88,11 @@ img { max-width: 100%; }
   .marquee-track { animation: none; flex-wrap: wrap; white-space: normal; }
   .marquee-track span:nth-child(n+14) { display: none; }
 }
+
+.research { padding: 3rem 0; border-top: 1px solid var(--hairline); }
+.section-title { font-size: 2rem; margin: 0.2rem 0 1.6rem; }
+.research-item { display: grid; grid-template-columns: 300px 1fr; gap: 1.8rem; align-items: start; padding: 1.6rem 0; border-top: 2px solid var(--ink); }
+.research-item:first-of-type { border-top: 2px solid var(--ink); }
+.research-item img { border-radius: 8px; border: 1px solid var(--hairline); }
+.research-item h3 { font-size: 1.4rem; margin: 0 0 0.5rem; }
+.research-meta { color: var(--muted); font-size: 0.9rem; margin-top: 0.7rem; }

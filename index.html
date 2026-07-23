@@ -59,6 +59,30 @@
     </div>
   </section>
 
+  <section id="research" class="research">
+    <div class="wrap">
+      <p class="eyebrow">Selected Research</p>
+      <h2 class="section-title">Research</h2>
+
+      <article class="research-item">
+        <img src="media/gp_fusion.png" alt="Multimodal Gaussian Process Fusion">
+        <div>
+          <h3>Multimodal Gaussian Process Fusion</h3>
+          <p>Ran a 9,703-configuration ablation of multimodal GP fusion (9 embedders × 3 GP scaling methods × 5 ensemble modes); a data-pipeline fix raised best test R² from 0.629 to 0.662. Built a spectrally-normalized MLP over Gemini text embeddings to extract a 128-d GP input, reaching test R² 0.6685 / NLPD 0.57.</p>
+          <p class="research-meta">Research with K. Polyzos, Schmidt AI in Science (UCSD) · manuscript in preparation</p>
+        </div>
+      </article>
+
+      <article class="research-item">
+        <img src="media/rag_context.png" alt="Hybrid RAG results table">
+        <div>
+          <h3>Hybrid RAG over Technical Docs</h3>
+          <p>Engineered a hybrid RAG pipeline — hierarchical chunking, bge-m3 dense + BM25 sparse fused by reciprocal-rank fusion, then a cross-encoder reranker — reaching F1@5 0.853 / Precision@5 0.889. Designed a HyDE query stage with parent-chunk expansion and a 1,700-token context packer.</p>
+          <p class="research-meta">Team project (2 people) · <a href="assets/RAG_Context_Engineering_Report.pdf" target="_blank" rel="noopener">Read the paper</a></p>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <section class="projects">
     <!-- Spring 2026 -->
