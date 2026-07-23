@@ -115,14 +115,29 @@ img { max-width: 100%; }
 .project-card a:hover { text-decoration: underline; text-decoration-color: var(--rust); }
 
 .experience { padding: 3rem 0; border-top: 1px solid var(--hairline); }
-.timeline { margin-top: 0.4rem; }
-.timeline-track { display: flex; flex-direction: column; }
+.timeline {
+  position: relative; height: 240px; overflow: hidden; margin-top: 0.4rem;
+  cursor: grab; user-select: none; -webkit-user-select: none; touch-action: none;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
+          mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
+}
+.timeline:active { cursor: grabbing; }
+.timeline-track { display: flex; flex-direction: column; will-change: transform; }
 .tl-item { position: relative; padding: 0.6rem 0 0.6rem 1.6rem; margin-left: 0.4rem; border-left: 2px solid var(--hairline); }
 .tl-item::before { content: ""; position: absolute; left: -7px; top: 0.95rem; width: 12px; height: 12px; border-radius: 50%; background: var(--rust); border: 2px solid var(--paper); }
 .tl-year { font-family: var(--font-serif); font-weight: 600; color: var(--rust); font-size: 1.05rem; }
 .tl-body { display: flex; flex-direction: column; margin-top: 0.1rem; }
 .tl-role { font-size: 0.95rem; color: var(--ink); }
 .tl-org { font-size: 0.85rem; color: var(--muted); }
+.tl-break { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 0; margin-left: 0.4rem; }
+.tl-break::before, .tl-break::after { content: ""; height: 1px; background: var(--hairline); flex: 1; }
+.tl-diamond { width: 9px; height: 9px; background: var(--rust); transform: rotate(45deg); flex: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline { height: auto; overflow: visible; cursor: default; -webkit-mask-image: none; mask-image: none; }
+  .timeline-track { transform: none !important; }
+  .timeline-track > *:nth-child(n+5) { display: none; }
+}
 
 .footer { border-top: 1px solid var(--hairline); padding: 2rem 0; margin-top: 2rem; color: var(--muted); font-size: 0.9rem; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
@@ -136,5 +151,6 @@ img { max-width: 100%; }
   .research-item { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .hero { padding: 3rem 0 2rem; }
+  .timeline { height: 200px; }
   .tl-item { padding: 0.5rem 0 0.5rem 1.4rem; }
 }

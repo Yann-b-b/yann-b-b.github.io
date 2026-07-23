@@ -70,12 +70,28 @@
     <div class="wrap">
       <p class="eyebrow">Career so far</p>
       <h2 class="section-title">Experience</h2>
-      <div class="timeline">
+      <div class="timeline" role="group" tabindex="0" aria-label="Work experience timeline">
         <div class="timeline-track">
           <article class="tl-item"><span class="tl-year">2023</span><div class="tl-body"><span class="tl-role">Instructional Assistant, ECE 15 (C Programming)</span><span class="tl-org">UC San Diego</span></div></article>
           <article class="tl-item"><span class="tl-year">2024</span><div class="tl-body"><span class="tl-role">Summer Research Intern (Medical Swallow Analysis)</span><span class="tl-org">UC San Diego</span></div></article>
           <article class="tl-item"><span class="tl-year">2025</span><div class="tl-body"><span class="tl-role">Data Science Intern</span><span class="tl-org">OpenAirlines, Toulouse</span></div></article>
           <article class="tl-item"><span class="tl-year">2026</span><div class="tl-body"><span class="tl-role">ML Research (Gaussian Process Fusion)</span><span class="tl-org">UC San Diego</span></div></article>
+          <div class="tl-break" aria-hidden="true"><i class="tl-diamond"></i></div>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2023</span><div class="tl-body"><span class="tl-role">Instructional Assistant, ECE 15 (C Programming)</span><span class="tl-org">UC San Diego</span></div></article>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2024</span><div class="tl-body"><span class="tl-role">Summer Research Intern (Medical Swallow Analysis)</span><span class="tl-org">UC San Diego</span></div></article>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2025</span><div class="tl-body"><span class="tl-role">Data Science Intern</span><span class="tl-org">OpenAirlines, Toulouse</span></div></article>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2026</span><div class="tl-body"><span class="tl-role">ML Research (Gaussian Process Fusion)</span><span class="tl-org">UC San Diego</span></div></article>
+          <div class="tl-break" aria-hidden="true"><i class="tl-diamond"></i></div>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2023</span><div class="tl-body"><span class="tl-role">Instructional Assistant, ECE 15 (C Programming)</span><span class="tl-org">UC San Diego</span></div></article>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2024</span><div class="tl-body"><span class="tl-role">Summer Research Intern (Medical Swallow Analysis)</span><span class="tl-org">UC San Diego</span></div></article>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2025</span><div class="tl-body"><span class="tl-role">Data Science Intern</span><span class="tl-org">OpenAirlines, Toulouse</span></div></article>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2026</span><div class="tl-body"><span class="tl-role">ML Research (Gaussian Process Fusion)</span><span class="tl-org">UC San Diego</span></div></article>
+          <div class="tl-break" aria-hidden="true"><i class="tl-diamond"></i></div>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2023</span><div class="tl-body"><span class="tl-role">Instructional Assistant, ECE 15 (C Programming)</span><span class="tl-org">UC San Diego</span></div></article>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2024</span><div class="tl-body"><span class="tl-role">Summer Research Intern (Medical Swallow Analysis)</span><span class="tl-org">UC San Diego</span></div></article>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2025</span><div class="tl-body"><span class="tl-role">Data Science Intern</span><span class="tl-org">OpenAirlines, Toulouse</span></div></article>
+          <article class="tl-item" aria-hidden="true"><span class="tl-year">2026</span><div class="tl-body"><span class="tl-role">ML Research (Gaussian Process Fusion)</span><span class="tl-org">UC San Diego</span></div></article>
+          <div class="tl-break" aria-hidden="true"><i class="tl-diamond"></i></div>
         </div>
       </div>
     </div>
@@ -269,6 +285,43 @@
     </span>
   </div>
 </footer>
+
+<script>
+(function () {
+  var tl = document.querySelector('.timeline');
+  var track = tl && tl.querySelector('.timeline-track');
+  if (!track) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var CYCLES = 4;
+  var unit = 0, offset = 0, hovering = false, dragging = false, lastY = 0, last = 0;
+
+  function measure() { unit = track.scrollHeight / CYCLES; }
+  function norm() { if (unit > 0) offset = ((offset % unit) + unit) % unit; }
+  function apply() { track.style.transform = 'translateY(' + (-offset) + 'px)'; }
+
+  function frame(now) {
+    if (!last) last = now;
+    var dt = now - last; last = now;
+    if (!hovering && !dragging && unit > 0) { offset += dt * 0.028; norm(); apply(); }
+    requestAnimationFrame(frame);
+  }
+
+  measure();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+  window.addEventListener('load', measure);
+  window.addEventListener('resize', measure);
+  requestAnimationFrame(frame);
+
+  tl.addEventListener('pointerenter', function () { hovering = true; });
+  tl.addEventListener('pointerleave', function () { hovering = false; dragging = false; });
+  tl.addEventListener('pointerdown', function (e) { dragging = true; lastY = e.clientY; try { tl.setPointerCapture(e.pointerId); } catch (x) {} });
+  tl.addEventListener('pointermove', function (e) { if (!dragging) return; offset -= (e.clientY - lastY); lastY = e.clientY; norm(); apply(); });
+  tl.addEventListener('pointerup', function () { dragging = false; });
+  tl.addEventListener('pointercancel', function () { dragging = false; });
+  tl.addEventListener('wheel', function (e) { if (hovering) { e.preventDefault(); offset += e.deltaY; norm(); apply(); } }, { passive: false });
+})();
+</script>
 
 </body>
 </html>
