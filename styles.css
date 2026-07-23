@@ -98,7 +98,7 @@ img { max-width: 100%; }
 .research-meta { color: var(--muted); font-size: 0.9rem; margin-top: 0.7rem; }
 
 .projects-section { padding: 3rem 0; border-top: 1px solid var(--hairline); }
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.6rem; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 1.6rem; }
 .project-card {
   background: #fff; border: 1px solid var(--hairline); border-radius: 10px; padding: 1.1rem;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
