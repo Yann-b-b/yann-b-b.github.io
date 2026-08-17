@@ -106,7 +106,7 @@
         <img src="media/gp_fusion.png" alt="Multimodal Gaussian Process Fusion">
         <div>
           <h3>Multimodal Gaussian Process Fusion</h3>
-          <p>Ran a 9,703-configuration ablation of multimodal GP fusion (9 embedders × 3 GP scaling methods × 5 ensemble modes); a data-pipeline fix raised best test R² from 0.629 to 0.662. Built a spectrally-normalized MLP over Gemini text embeddings to extract a 128-d GP input, reaching test R² 0.6685 / NLPD 0.57.</p>
+          <p>Built a reproducible pipeline benchmarking a multimodal ensemble Gaussian process — per-modality distributions fused by moment matching — against neural-network and transformer baselines on an 8-dataset benchmark, reaching 0.72 test R² on Melbourne and matching a 5-model deep ensemble on accuracy while beating it on calibration (NLPD 0.4330 vs 0.4447). A 9,703-configuration ablation (9 embedders × 3 GP scaling methods × 5 ensemble modes) showed spectrally normalized networks between encoders and GP heads raised R² from 0.629 to 0.662.</p>
           <p class="research-meta">Research with K. Polyzos, Schmidt AI in Science (UCSD) · manuscript in preparation</p>
         </div>
       </article>
@@ -115,7 +115,7 @@
         <img src="media/rag_context.png" alt="Hybrid RAG results table">
         <div>
           <h3>Hybrid RAG over Technical Docs</h3>
-          <p>Engineered a hybrid RAG pipeline — hierarchical chunking, bge-m3 dense + BM25 sparse fused by reciprocal-rank fusion, then a cross-encoder reranker — reaching F1@5 0.853 / Precision@5 0.889. Designed a HyDE query stage with parent-chunk expansion and a 1,700-token context packer.</p>
+          <p>Co-developed a hybrid RAG pipeline — hierarchical chunking, bge-m3 dense + BM25 sparse retrieval fused by reciprocal-rank fusion, then a bge cross-encoder reranker — reaching F1@5 0.853 / Precision@5 0.889. Designed a HyDE query stage (an LLM drafts a hypothetical answer whose embedding drives retrieval) with parent-chunk expansion, raising F1 from 0.6 to 0.85.</p>
           <p class="research-meta">Team project (2 people) · <a href="assets/RAG_Context_Engineering_Report.pdf" target="_blank" rel="noopener">Read the paper</a></p>
         </div>
       </article>
@@ -136,7 +136,7 @@
       <h2>FretBoardCrazies – <strong>Guitar Fretboard Trainer</strong> <span style="font-weight: normal; font-size: 0.9em;">(Summer 2026)</span></h2>
       <ul>
         <li>Native <strong>SwiftUI</strong> app for iOS and macOS that prompts a note and verifies it from <strong>live microphone input</strong>, detecting pitch through AudioKit's PitchTap.</li>
-        <li><strong>Modular by design</strong>: generalized a guitar-only app to guitar and bass by injecting an <strong>Instrument abstraction</strong> through the drill, progress and preset layers — deleting hardcoded string ranges instead of branching on type.</li>
+        <li><strong>Modular by design</strong>: generalized a guitar-only app to bass, banjo, and ukulele by injecting an <strong>Instrument abstraction</strong> through the drill, progress and preset layers over five refactors — deleting hardcoded string ranges instead of branching on type.</li>
         <li>Built <strong>spec-first alongside Claude Code</strong>: 17 design specs and 16 implementation plans committed before the features they describe, with 8 protocol seams and <strong>254 Swift Testing cases</strong> keeping agent-written changes verifiable.</li>
         <li>A <strong>music-theory engine</strong> suggests the next chord from the current chord and key — 23 chord qualities, 15 harmonic rules, gated behind a <strong>4-tier progression</strong>.</li>
       </ul>
@@ -165,8 +165,8 @@
       <img src="media/multimodal.png" alt="Multimodal Contrastive Learning">
       <h2>Multimodal <strong>Embedding Alignment</strong> <span style="font-weight: normal; font-size: 0.9em;">(Winter 2025)</span></h2>
       <ul>
-        <li>A research-based project developing a framework to bridge modalities using <strong>contrastive learning</strong>.</li>
-        <li>Focused on <strong>aligning audio, image, and text embeddings</strong> using <strong>deep learning</strong> and projection heads.</li>
+        <li>Co-developed a framework representing modalities as <strong>nodes in a graph</strong> and learned translator functions as edges, enabling cross-modal traversal without requiring paired data for every modality combination.</li>
+        <li>Trained MLP projection heads with a <strong>contrastive objective</strong> to align audio, image, and text embeddings in a shared latent space, evaluated with a reconstruction-loss metric.</li>
       </ul>
       <p style="font-size: 0.85em; color: #555;"><em>Team project with Michael</em></p>
       <a href="https://github.com/Yann-b-b/MULTIMODAL_Project" target="_blank">View on GitHub</a>
@@ -178,8 +178,8 @@
       <img src="media/nlp_project.png" alt="LLM to SLM Distillation">
       <h2>NLP: <strong>LLM → SLM Distillation</strong> for <strong>Spanish Summarization</strong> <span style="font-weight: normal; font-size: 0.9em;">(Winter 2025)</span></h2>
       <ul>
-        <li><strong>Distilled large language model</strong> knowledge into a lightweight model for <strong>Spanish text summarization</strong>.</li>
-        <li>Evaluated downstream performance and <strong>interpretability</strong> across tasks.</li>
+        <li>Distilled a <strong>Bloom-7B</strong> teacher into small language models for <strong>Spanish summarization</strong>, crawling 5,000 Wikipedia bios and generating teacher summaries on Polytechnique servers.</li>
+        <li><strong>GPT-Neo-125M</strong> — fully fine-tuned on a laptop, no LoRA — led every metric (<strong>ROUGE-1 0.67, BLEU 0.32</strong>) over larger LoRA-tuned models, confirmed by an <strong>LLM-as-judge</strong> (Mistral-7B-Instruct) evaluation loop.</li>
       </ul>
       <a href="https://github.com/Yann-b-b/NLP_Spanish_Summarization" target="_blank">View on GitHub</a>
       <br>
@@ -220,9 +220,8 @@
       <img src="media/tweet_classification.png" alt="Tweet Classification">
       <h2>ML for <strong>Tweet Classification</strong> <span style="font-weight: normal; font-size: 0.9em;">(Fall 2024)</span></h2>
       <ul>
-        <li><strong>Placed Second in Kaggle Competition</strong> for the Project.</li>
-        <li>Supervised learning project to classify whether a tweet was sent during a <strong>crucial moment in a soccer match</strong>.</li>
-        <li>Explored <strong>feature extraction</strong>, model selection, and evaluation metrics.</li>
+        <li>Compared <strong>SVM, 1D/2D CNN, RNN, and Transformer</strong> models against a heuristic baseline to detect goals, penalties, cards, and own goals from match-time tweets, reaching <strong>76.9% accuracy</strong> and <strong>2nd place</strong> in the class Kaggle competition.</li>
+        <li>Engineered the feature-extraction, preprocessing, and evaluation pipeline, running ablations over sub-event classification and half-time/full-time boundary placement.</li>
       </ul>
       <p style="font-size: 0.85em; color: #555;"><em>Team project with Violette</em></p>
       <a href="https://github.com/Yann-b-b/Tweet_Classification" target="_blank">View on GitHub</a>
@@ -239,8 +238,8 @@
       <img src="media/swallow_analysis.png" alt="Swallow sEMG spectrogram analysis">
       <h2>Medical <strong>Swallow Detection</strong> <span style="font-weight: normal; font-size: 0.9em;">(Summer 2024)</span></h2>
       <ul>
-        <li>Designed an <strong>end-to-end pipeline</strong> classifying swallowing events from the public UCL sEMG dataset — spectrogram generation and a <strong>CNN segmenter</strong> over <strong>8,459 labeled segments</strong>.</li>
-        <li>Built data-augmentation and an audio segmenter; ran <strong>leakage-checked, MLflow-tracked</strong> ablations.</li>
+        <li>Built a <strong>data-augmentation pipeline</strong> (time-stretch, speed shift, white-noise injection) expanding 600 minutes of swallowing audio from 60 patients <strong>5x</strong>, keeping only transforms that improved segmentation accuracy.</li>
+        <li>Trained a <strong>CNN</strong> to predict laryngologist-labeled swallow masks, coupling audio with <strong>8,459 sEMG segments</strong> from a public dataset to reach <strong>93% segmentation accuracy</strong>.</li>
       </ul>
       <a href="https://github.com/Yann-b-b/Swallow_Analysis_Project" target="_blank">View on GitHub</a>
       <br>
@@ -252,7 +251,8 @@
       <img src="media/asl_recognition.jpeg" alt="ASL Recognition">
       <h2><strong>ASL Recognition CNN</strong> <span style="font-weight: normal; font-size: 0.9em;">(Winter 2024)</span></h2>
       <ul>
-        <li>A <strong>ResNet-based approach</strong> for classifying <strong>American Sign Language letters</strong> using <strong>skeletonized hand images</strong>.</li>
+        <li>Modified a <strong>ResNet-10</strong> classifier to take <strong>gray-scale hand-skeleton images</strong> as a fourth input channel, raising accuracy on <strong>29 ASL letter classes from 96% to 99%</strong>.</li>
+        <li>Co-developed the model and skeletal-image dataset with one teammate, contributing ~13 of 21 commits and co-authoring the written paper.</li>
       </ul>
       <p style="font-size: 0.85em; color: #555;"><em>Team project with Sebastian</em></p>
       <a 
@@ -278,8 +278,8 @@
       <img src="media/get_a_grip2.jpeg" alt="Gripper Arm Physical">
       <h2>Gripper Arm – <strong>Assistive Device</strong> <span style="font-weight: normal; font-size: 0.9em;">(Spring 2023)</span></h2>
       <ul>
-        <li><strong>Forearm-mounted device</strong> assisting those with <strong>limited hand mobility</strong>.</li>
-        <li><strong>PCB design</strong>, <strong>CAD</strong>, and <strong>embedded C code</strong>.</li>
+        <li>Designed the <strong>CAD model</strong> of a forearm-mounted assistive gripper in <strong>Onshape</strong>, enabling fast prototype iteration.</li>
+        <li>Wrote <strong>embedded C firmware</strong> triggering gripper activation from <strong>IR and pressure sensors</strong> plus a manual button, closing the claw onto detected objects.</li>
       </ul>
       <p style="font-size: 0.85em; color: #555;"><em>Team project with Quoc and Tahseen</em></p>
       <a href="https://qdo665.wixsite.com/ece196getagrip" target="_blank">
